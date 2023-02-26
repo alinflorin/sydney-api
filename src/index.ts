@@ -1,18 +1,27 @@
 import express from "express";
-import { config } from 'dotenv';
+import { config } from "dotenv";
+import ChatBot from "sydney-ai";
 
 config();
+
+const chatBot = new ChatBot(process.env.BINGTOKEN || "wrong");
 
 (async () => {
   try {
     const app = express();
     app.use(express.json());
-    
 
-    app.post(`/api/chat`, async (req, res) => {
+    app.post(`/api/chat/ask`, async (req, res) => {
       try {
-        // TODO
-        res.send('test');
+        const response = await chatBot.ask(
+          req.body.question,
+          req.body.conversationId || undefined
+        );
+
+        res.send({
+          reply: response,
+          conversationId: req.body.conversationId,
+        });
       } catch (err) {
         res.status(500).send("Error!");
         console.error(err);
