@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  sydney-api:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-02-26T17:34:44.803062665Z"
+    description: A Helm chart for Kubernetes
+    digest: df381de3ed9b41585c54c4f401bfbb9401f3c780731a13bd010436e754b0f064
+    name: sydney-api
+    type: application
+    urls:
+    - https://alinflorin.github.io/sydney-api/sydney-api-1.0.0.tgz
+    version: 1.0.0
+generated: "2023-02-26T17:34:44.801780166Z"
