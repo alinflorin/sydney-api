@@ -12,6 +12,7 @@ config();
     app.post(`/api/chat`, async (req, res) => {
       try {
         // TODO
+        res.send('test');
       } catch (err) {
         res.status(500).send("Error!");
         console.error(err);
